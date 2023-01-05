@@ -3,7 +3,7 @@
 
 ## Link to deployed page
 
-###Challenge #5 - 
+### Challenge #5 - 
 
 Some starter code was provided with the layout for the Work Day scheduler. I edited the color of the save button and extended out the scheduler to show the entire morning timeframe from 6AM to 11AM.
 
@@ -22,3 +22,4 @@ Identified current hour by using dayjs again and compared current hour with sche
 -stack overflow - setting and getting local storage with jQuery-Log Rocket:a javascript blog https://blog.logrocket.com/localstorage-javascript-complete-guide/#getitem
 
 ## Screen Shot - Shows all hours gray due to them all currently being in the past.
+![Screenshot](https://user-images.githubusercontent.com/116509586/210693039-6cfa0bc1-ea52-40d0-82cf-0c9bf1f0dd34.jpg)

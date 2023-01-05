@@ -8,16 +8,21 @@ $("#todaysDate").append(todaysDate);
 function colors() {
     // get current time
     var hourNow = dayjs().hour();
-    // loop to run through each time block and determine which condition is met
+    console.log (hourNow)
+    // loop to run through each time block and determine which condition is met, splits the "id" into an array and pulls the index [1] as the data.
     $(".time-block").each(function () {
-        var blockHour = parseInt($(this).attr("id").split("-")[1]);
-        if (blockHour < hourNow) {
+        var schedTime = parseInt($(this).attr("id").split("-")[1]);
+        console.log(schedTime)
+        // If schedule time in div is equal less than current hour at past color
+        if (schedTime < hourNow) {
             $(this).addClass("past");
         }
-        else if (blockHour === hourNow) {
+        // If schedule time in div is equal to the current hour remove past color and add present color.
+        else if (schedTime === hourNow) {
             $(this).removeClass("past");
             $(this).addClass("present");
         }
+        // if both above conditions are false then apply the DOM manipulations below.
         else {
             $(this).removeClass("past");
             $(this).removeClass("present");
@@ -25,8 +30,6 @@ function colors() {
         }
     });
 }
-// Calling the colors function
-colors();
 
 // Jquery for saveBtn event listener
 $(".saveBtn").on("click", function () {
@@ -37,13 +40,5 @@ $(".saveBtn").on("click", function () {
     localStorage.setItem(eventTime, event);
 })
 
-
-
-
-// Repop previously saved information
-$("#hour-6 .description").val(localStorage.getItem("hour-6"));
-$("#hour-7 .description").val(localStorage.getItem("hour-7"));
-$("#hour-8 .description").val(localStorage.getItem("hour-8"));
-$("#hour-9 .description").val(localStorage.getItem("hour-9"));
-$("#hour-10 .description").val(localStorage.getItem("hour-10"));
-$("#hour-11 .description").val(localStorage.getItem("hour-11"));
+// Functions to call
+colors();
